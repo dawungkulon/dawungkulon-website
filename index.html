@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMKM Dawung Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .card-body h3 {
+      margin: 0.5rem 0;
+    }
+    .card-body p {
+      margin: 0.25rem 0;
+    }
+    footer {
+      text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UMKM Dawung</h1>
+    <nav>
+      <a href="#produk">Produk</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="product">
+      <div class="card fade-in">
+        <img src="https://via.placeholder.com/250x180" alt="Krecek Bu Imah">
+        <div class="card-body">
+          <h3>Krecek Bu Imah</h3>
+          <p>Rp20.000 / 250gr</p>
+          <p><a href="https://wa.me/6281234567890">Pesan via WA</a></p>
+        </div>
+      </div>
+      <div class="card fade-in">
+        <img src="https://via.placeholder.com/250x180" alt="Meja Jati Pak Minto">
+        <div class="card-body">
+          <h3>Meja Jati Pak Minto</h3>
+          <p>Rp850.000</p>
+          <p><a href="https://wa.me/6281234567891">Pesan via WA</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <h2>Tentang Desa Dawung</h2>
+    <p>Desa Dawung di Pacitan, Jawa Timur, merupakan desa yang aktif dalam produksi olahan rumahan dan kerajinan kayu mebeler. Melalui marketplace ini, kami ingin membantu memperluas pemasaran produk lokal ke masyarakat luas.</p>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Email: umkm.dawung@gmail.com</p>
+    <p>Instagram: @umkm_dawung</p>
+    <p>WhatsApp Admin: <a href="https://wa.me/6281234567800">Klik untuk Chat</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 UMKM Dawung. Dibuat oleh Mahasiswa KKN.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
